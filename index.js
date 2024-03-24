@@ -1,106 +1,70 @@
-/* 1. Satrni kiritish sifatida qabul qiluvchi va qatordagi so‘zlar sonini qaytaruvchi funksiya yozing.
+/*1. Muammo: 1 dan n gacha raqamlarni chop etish
+   Foydalanuvchidan n kiritishni qabul qilib, 1 dan n gacha bo‘lgan barcha 
+   raqamlarni alohida satrlarda chop etadigan dastur tuzing. */
 
-2. Ob'ektlar uchun xossalari bo'lgan xarid qilish savatini ifodalovchi ob'ekt yarating 
-(nom va narx bo'yicha xususiyatlarga ega ob'ektlar majmuasi). Savatcha ob'ektini argument
- sifatida qabul qiladigan va savatdagi barcha elementlarning umumiy qiymatini qaytaradigan funksiyani yozing.
+// for (let i = 0; i <= n; i++) {
+//   console.log(i);
+// }
 
-3. Raqamni kiritish sifatida qabul qiladigan va agar son tub son bo‘lsa, rost,
- aks holda noto‘g‘ri qiymatini qaytaradigan funksiya yozing.
+/*  2. Muammo: Juft yoki toqni toping. Foydalanuvchidan kiritilgan sonni oladigan va uning 
+juft yoki toq ekanligini tekshiradigan dastur tuzing. Agar raqam 2 ga bo'linadigan bo'lsa, 
+"Juft" ni chop eting, aks holda "Toq" ni chop eting. */
 
-4. Ism, sinf va mavzular (satrlar massivi) xususiyatlariga ega talabani ifodalovchi ob'ekt yarating.
- Talaba obyektini argument sifatida oladigan va talabaning o‘rtacha bahosini qaytaruvchi funksiya yozing.
+// if (n % 2 == 0) {
+//   console.log("juft");
+// } else {
+//   console.log("toq");
+// }
 
-5. Satrni kirish sifatida qabul qiladigan va barcha unlilar “o” harfi bilan almashtirilgan qatorni qaytaradigan funksiya yozing.
+/*3. Masala: Juft sonlar yig’indisi
+  Foydalanuvchidan kiritilgan n ni oladigan va 1 dan n gacha bo‘lgan barcha juft sonlar yig‘indisini hisoblaydigan dastur tuzing. */
 
-6. Sarlavha, muallif va sahifalar xususiyatlariga ega kitobni ifodalovchi ob'ekt yarating.
- Kitob ob'ektini argument sifatida qabul qiladigan va "muallif bo'yicha sarlavha, sahifalar sahifalari"
-  formatida qatorni qaytaradigan funktsiyani yozing.
+// var sum = 0;
 
-7. Raqamlar massivini kirish sifatida qabul qiluvchi va massivdagi barcha sonlar yig‘indisini qaytaruvchi funksiya yozing.
+// for (let i = 0; i <= n; i++) {
+//   if (i % 2 == 0) {
+//     sum += i;
+//   }
+// }
+// console.log(sum);
 
-8. Restoranni nomi, menyusi (mahsulot va narx boʻyicha xossalari boʻlgan obʼyektlar majmuasi)
-va vegan (restoran vegan variantlari xizmat qilishini koʻrsatuvchi mantiqiy) koʻrsatuvchi obyekt yarating.
- Restoran ob'ektini argument sifatida qabul qiladigan va barcha menyu elementlari va narxlarni ko'rsatadigan
- qatorni qaytaradigan funktsiyani yozing.
+// if (n > 0) {
+//   console.log("positive");
+// } else if (n == 0) {
+//   console.log("zero");
+// } else {
+//   console.log("negative");
+// }
 
-9. Satrni kirish sifatida qabul qiladigan va agar satr palindrom bo'lsa, rost, 
-aks holda noto'g'ri qiymatini qaytaradigan funksiya yozing.
+/*5. Masala: Ko‘paytirish jadvali
+   Foydalanuvchidan n kiritishni oladigan va n ni 1 dan 10 gacha ko‘paytirish jadvalini chop etadigan dastur tuzing. */
 
-10. Egasi, balansi va tranzaksiyalari uchun xossalari bo‘lgan bank hisobini ifodalovchi ob’ekt yarating 
-(sana va summa bo‘yicha xossalari bo‘lgan obyektlar massivi). Bank hisobi obyektini argument sifatida oladigan va 
-hisobning joriy qoldig‘ini qaytaruvchi funksiya yozing. */
+// for (let i = 1; i <= 10; i++) {
+//   console.log(`${n}*${i}=${n * i}`);
+// }
 
-// 1
-// var fruits = ["olma", "anor", "shaftoli", "behi"];
+/*6. Masala: Raqamlar yig‘indisi
+   Foydalanuvchidan kiritilgan sonni oladigan va uning raqamlari yig‘indisini hisoblaydigan dastur tuzing. */
 
-// console.log(fruits.length);
+// var sum = 0;
+// for (let i = 1; i <= n; i++) {
+//   sum += i;
+// }
+// console.log(sum);
 
-// 2
-var shop = {
-  apple: {
-    count: 5,
-    price: 500,
-  },
-  anor: {
-    count: 10,
-    price: 600,
-  },
-};
+/*8. Masala: Faktorial hisoblash
+   Foydalanuvchidan kirish n ni oladigan va uning faktorialini hisoblaydigan dastur tuzing. */
 
-var sum = 0;
-var value = Object.values(shop);
+// var sum = 1;
+// for (let i = 1; i <= n; i++) {
+//   console.log((sum *= i));
+// }
 
-for (let i = 0; i < value.length; i++) {
-  sum += value[i].count + value[i].price;
-}
-console.log(sum);
+/*9. Muammo: Kabisa yilini tekshiring
+   Foydalanuvchidan kiritilgan yilni oladigan va uning kabisa yili yoki yo'qligini tekshiradigan dastur yozing. 
+   Kabisa yili 4 ga bo'linadi va 100 ga bo'linmaydi yoki 400 ga bo'linmaydi. */
 
-// 3
-// var number = 5;
+var n = 2023;
 
-// // 4
-var students = {
-  azim: {
-    ball: 10,
-  },
-  sardor: {
-    ball: 2,
-  },
-  asadbek: {
-    ball: 3,
-  },
-  farruh: {
-    ball: 4,
-  },
-  fah: {
-    ball: 5,
-  },
-};
-
-var value = Object.values(students);
-var sum = 0;
-
-for (let i = 0; i < value.length; i++) {
-  sum += value[i].ball;
-}
-console.log(sum / value.length);
-
-/*1. Massivdagi elementlar ro'yxatini saqlaydigan va foydalanuvchiga ob'ekt usullaridan foydalangan holda ro'yxatdagi
- narsalarni qo'shish, o'chirish yoki yangilash imkonini beradigan dastur yozing.
-
-2. Ob'ektlardan foydalangan holda oddiy xarid qilish savat tizimini amalga oshiring,
- bu erda foydalanuvchi savatga narsalarni qo'shishi, savatdan narsalarni olib tashlashi va savatdagi 
- narsalarning umumiy narxini hisoblashi mumkin.
-
-3. Ismi, yoshi, sinfi kabi xususiyatlarga ega o‘quvchilar ro‘yxatini saqlaydigan dastur tuzing. 
-Foydalanuvchiga roʻyxatga yangi talabalar qoʻshish, talabalarni roʻyxatdan oʻchirish va tizimdagi barcha 
-talabalar roʻyxatini koʻrsatishga ruxsat bering.
-
-4. Ismi, yoshi va jinsi kabi xususiyatlarga ega bo'lgan shaxsni ifodalovchi ob'ektni oladigan va shaxs 
-ma'lumotlari bilan formatlangan qatorni qaytaradigan funktsiyani yozing.
-
-5. Ob'ektlardan foydalangan holda oddiy bank tizimini amalga oshirish, bu erda foydalanuvchi hisobvaraqlar yaratishi,
- hisobvaraqlarga pul qo'yishi, hisobvaraqlardan pul olishi va hisob balansini ko'rsatishi mumkin.
-
-6. Ob'ektlar yordamida kutubxona tizimini simulyatsiya qiluvchi dastur yarating, bunda foydalanuvchi kutubxonaga kitob qo'shishi,
- kutubxonadan kitob olishi, olingan kitoblarni qaytarishi va kutubxonadagi barcha kitoblar ro'yxatini ko'rsatishi mumkin. */
+// if (n % 4 == 0) console.log("kabisa yili");
+// else console.log("not kabisa yili");
