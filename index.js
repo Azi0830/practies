@@ -1,24 +1,18 @@
-/*1. Muammo: 1 dan n gacha raqamlarni chop etish
-   Foydalanuvchidan n kiritishni qabul qilib, 1 dan n gacha bo‘lgan barcha 
-   raqamlarni alohida satrlarda chop etadigan dastur tuzing. */
+//Masala01
 
+//1.1
 // for (let i = 0; i <= n; i++) {
 //   console.log(i);
 // }
 
-/*  2. Muammo: Juft yoki toqni toping. Foydalanuvchidan kiritilgan sonni oladigan va uning 
-juft yoki toq ekanligini tekshiradigan dastur tuzing. Agar raqam 2 ga bo'linadigan bo'lsa, 
-"Juft" ni chop eting, aks holda "Toq" ni chop eting. */
-
+//1.2
 // if (n % 2 == 0) {
 //   console.log("juft");
 // } else {
 //   console.log("toq");
 // }
 
-/*3. Masala: Juft sonlar yig’indisi
-  Foydalanuvchidan kiritilgan n ni oladigan va 1 dan n gacha bo‘lgan barcha juft sonlar yig‘indisini hisoblaydigan dastur tuzing. */
-
+//1.3
 // var sum = 0;
 
 // for (let i = 0; i <= n; i++) {
@@ -28,6 +22,7 @@ juft yoki toq ekanligini tekshiradigan dastur tuzing. Agar raqam 2 ga bo'linadig
 // }
 // console.log(sum);
 
+//1.4
 // if (n > 0) {
 //   console.log("positive");
 // } else if (n == 0) {
@@ -36,35 +31,128 @@ juft yoki toq ekanligini tekshiradigan dastur tuzing. Agar raqam 2 ga bo'linadig
 //   console.log("negative");
 // }
 
-/*5. Masala: Ko‘paytirish jadvali
-   Foydalanuvchidan n kiritishni oladigan va n ni 1 dan 10 gacha ko‘paytirish jadvalini chop etadigan dastur tuzing. */
-
+//1.5
 // for (let i = 1; i <= 10; i++) {
 //   console.log(`${n}*${i}=${n * i}`);
 // }
 
-/*6. Masala: Raqamlar yig‘indisi
-   Foydalanuvchidan kiritilgan sonni oladigan va uning raqamlari yig‘indisini hisoblaydigan dastur tuzing. */
-
+//1.6
 // var sum = 0;
 // for (let i = 1; i <= n; i++) {
 //   sum += i;
 // }
 // console.log(sum);
 
-/*8. Masala: Faktorial hisoblash
-   Foydalanuvchidan kirish n ni oladigan va uning faktorialini hisoblaydigan dastur tuzing. */
-
+//1.8
 // var sum = 1;
 // for (let i = 1; i <= n; i++) {
 //   console.log((sum *= i));
 // }
 
-/*9. Muammo: Kabisa yilini tekshiring
-   Foydalanuvchidan kiritilgan yilni oladigan va uning kabisa yili yoki yo'qligini tekshiradigan dastur yozing. 
-   Kabisa yili 4 ga bo'linadi va 100 ga bo'linmaydi yoki 400 ga bo'linmaydi. */
-
-var n = 2023;
+//1.9
+// var n = 2023;
 
 // if (n % 4 == 0) console.log("kabisa yili");
 // else console.log("not kabisa yili");
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//Masala02
+//2.1
+/*1. Massivdagi elementlar ro'yxatini saqlaydigan va foydalanuvchiga ob'ekt usullaridan 
+foydalangan holda ro'yxatdagi narsalarni qo'shish, o'chirish yoki yangilash imkonini beradigan dastur yozing. */
+
+// var students = {
+
+//   user1: {
+//     name: "Azim",
+//     age: 26,
+//   },
+//   user2: {
+//     name: "Husan",
+//     age: 22,
+//   },
+// };
+
+// //delete
+// delete students.user2;
+
+// //create
+// students.user2 = { name: "Sardor", age: 28 };
+
+// console.log(students);
+
+//2.2
+/*2. Ob'ektlardan foydalangan holda oddiy xarid qilish savat tizimini amalga oshiring, bu erda foydalanuvchi
+ savatga narsalarni qo'shishi, savatdan narsalarni olib tashlashi va savatdagi narsalarning umumiy narxini hisoblashi mumkin. */
+
+// var shop = {
+//   apple: {
+//     count: 10,
+//     price: 2500,
+//   },
+//   anor: {
+//     count: 5,
+//     price: 5000,
+//   },
+// };
+
+// var v = Object.values(shop);
+// var sum = 0;
+// for (let i = 0; i < v.length; i++) {
+//   sum += v[i].count * v[i].price;
+// }
+// console.log(sum);
+
+//2.3
+/*3. Ismi, yoshi, sinfi kabi xususiyatlarga ega o‘quvchilar ro‘yxatini saqlaydigan dastur tuzing. 
+Foydalanuvchiga roʻyxatga yangi talabalar qoʻshish, talabalarni roʻyxatdan oʻchirish va tizimdagi barcha talabalar 
+roʻyxatini koʻrsatishga ruxsat bering. */
+
+// var students = {
+//   student1: {
+//     name: "Azim",
+//     age: 25,
+//     class: 12,
+//   },
+//   student2: {
+//     name: "Lochin",
+//     age: 25,
+//     class: 11,
+//   },
+//   student3: {
+//     name: "Husan",
+//     age: 12,
+//     class: 12,
+//   },
+// };
+
+// //delete
+// delete students.student2;
+
+// students.student4 = {
+//   name: "Sardor",
+//   age: 28,
+//   class: 9,
+// };
+
+// var v = Object.values(students);
+// for (let i = 0; i < v.length; i++) {
+//   console.log(v[i].name);
+// }
+
+// class Student {
+//   constructor(name, age, clas) {
+//     (this.name = name), (this.age = age), (this.clas = clas);
+//   }
+// }
+
+// var student1 = new Student("Azim", "25", "12");
+// var student2 = new Student("Husan", "25", "8");
+// var student3 = new Student("Lochin", "24", "11");
+// console.log(student1);
+// console.log(student2);
+// console.log(student3);
+
+//2.4
+/* 4. Ismi, yoshi va jinsi kabi xususiyatlarga ega bo'lgan shaxsni ifodalovchi ob'ektni oladigan va 
+shaxs ma'lumotlari bilan formatlangan qatorni qaytaradigan funktsiyani yozing.*/
