@@ -140,19 +140,92 @@ roʻyxatini koʻrsatishga ruxsat bering. */
 //   console.log(v[i].name);
 // }
 
+////////////// class
 // class Student {
 //   constructor(name, age, clas) {
 //     (this.name = name), (this.age = age), (this.clas = clas);
+//   }
+//   full() {
+//     `${this.clas}${this.age}`;
+//   }
+// }
+
+// class Uzbstudent extends Student {
+//   constructor(name, age, clas, city) {
+//     super(name, age, clas);
+//     this.city = city;
 //   }
 // }
 
 // var student1 = new Student("Azim", "25", "12");
 // var student2 = new Student("Husan", "25", "8");
 // var student3 = new Student("Lochin", "24", "11");
-// console.log(student1);
+
+// var uzb = new Uzbstudent("Asadbek", "18", "9", "Namangan");
+
+// console.log(student1.full());
 // console.log(student2);
 // console.log(student3);
+// console.log(uzb.full());
 
 //2.4
 /* 4. Ismi, yoshi va jinsi kabi xususiyatlarga ega bo'lgan shaxsni ifodalovchi ob'ektni oladigan va 
 shaxs ma'lumotlari bilan formatlangan qatorni qaytaradigan funktsiyani yozing.*/
+
+// function login(passwort, gmail, callback) {
+//   console.log("iltimos kuting");
+//   setTimeout(() => {
+//     if (passwort == "passwort" && gmail == "gmail") {
+//       return callback("accountga marhamat");
+//     } else {
+//       return callback("error");
+//     }
+//   }, 3000);
+// }
+
+// login("passwort1", "gmail", (data) => {
+//   console.log(data);
+// });
+
+///////////////// Promise
+// let pw = "123";
+// let email = "@gmail.com";
+
+// let promise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     if (pw == "123" && email == "@gmail.com") {
+//       resolve("ishlayabdi");
+//     } else {
+//       reject("not");
+//     }
+//   }, 3000);
+// });
+
+// promise
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
+
+//////////////  fetch
+
+function coffeshop(type) {
+  fetch("https://api.sampleapis.com/coffee/hot")
+    .then((data) => {
+      return data.json();
+    })
+    .then((data) => {
+      console.log(data);
+      console.log(
+        data.filter((value) => {
+          return value.title === type;
+        })[0].image
+      );
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+coffeshop("Frozen Lemonade");
