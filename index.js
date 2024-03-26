@@ -188,7 +188,7 @@ shaxs ma'lumotlari bilan formatlangan qatorni qaytaradigan funktsiyani yozing.*/
 // });
 
 ///////////////// Promise
-// let pw = "123";
+// let pw = "12";
 // let email = "@gmail.com";
 
 // let promise = new Promise((resolve, reject) => {
@@ -198,7 +198,7 @@ shaxs ma'lumotlari bilan formatlangan qatorni qaytaradigan funktsiyani yozing.*/
 //     } else {
 //       reject("not");
 //     }
-//   }, 3000);
+//   }, 1000);
 // });
 
 // promise
@@ -207,6 +207,9 @@ shaxs ma'lumotlari bilan formatlangan qatorni qaytaradigan funktsiyani yozing.*/
 //   })
 //   .catch((error) => {
 //     console.log(error);
+//   })
+//   .finally((nani) => {
+//     console.log("bu nima", nani); //nani = underfined
 //   });
 
 //////////////  fetch
@@ -217,12 +220,11 @@ function coffeshop(type) {
       return data.json();
     })
     .then((data) => {
-      console.log(data);
-      console.log(
-        data.filter((value) => {
-          return value.title === type;
-        })[0].image
-      );
+      var v = data.filter((value) => {
+        return value.title === type;
+      })[0];
+      console.log(v.ingredients);
+      console.log(v.image);
     })
     .catch((error) => {
       console.log(error);
