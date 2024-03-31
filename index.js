@@ -214,20 +214,34 @@ shaxs ma'lumotlari bilan formatlangan qatorni qaytaradigan funktsiyani yozing.*/
 
 //////////////  fetch
 
-function coffeshop(type) {
-  fetch("https://api.sampleapis.com/coffee/hot")
-    .then((data) => {
-      return data.json();
-    })
-    .then((data) => {
-      var v = data.filter((value) => {
-        return value.title === type;
-      })[0];
-      console.log(v.ingredients);
-      console.log(v.image);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-}
+// function coffeshop(type) {
+//   fetch("https://api.sampleapis.com/coffee/hot")
+//     .then((data) => {
+//       return data.json();
+//     })
+//     .then((data) => {
+//       var v = data.filter((value) => {
+//         return value.title === type;
+//       })[0];
+//       console.log(v.ingredients);
+//       console.log(v.image);
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//     });
+// }
+// coffeshop("Frozen Lemonade");
+
+///
+coffeshop = async (type) => {
+  var response = await fetch("https://api.sampleapis.com/coffee/hot");
+
+  var data = await response.json();
+
+  var v = data.filter((value) => {
+    return value.title === type;
+  })[0];
+  console.log(v.title, v.ingredients);
+};
+
 coffeshop("Frozen Lemonade");
